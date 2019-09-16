@@ -1,0 +1,70 @@
+import React, { Component} from 'react';
+import Typography from '@material-ui/core/Typography';
+import CardContent from '@material-ui/core/CardContent';
+import Button from '@material-ui/core/Button';
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardMedia from '@material-ui/core/CardMedia';
+import Grid from '@material-ui/core/Grid';
+import { Link } from 'gatsby';
+
+class AlbumCard extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {showModal: false};
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.setState(prevState => ({
+      showModal: !prevState.showModal
+    }));
+  }
+  
+  
+  render() {
+    const card = this.props.card;
+    const classes = this.props.classes;
+    const entryName = card.node.fields.slug.replace(/\//g,'')
+
+    const findLogo = this.props.logo.edges.filter(el => {
+      return el.node.name === `logo-${entryName}`
+    })
+    const logo = findLogo.length !== 0 ? findLogo[0].node.publicURL : 'https://source.unsplash.com/random/'
+  
+    return (
+      <Grid item key={card} xs={12} sm={6} md={4} className={`visibility-${card.node.frontmatter.category} ${this.state.showModal
+        ? "modal--open"
+        : "modal--close"} ${card.node.frontmatter.category.split(',').includes(this.props.show) || this.props.show === 'all' ? classes['card-show']: classes['card-hide']}`} onClick={this.handleClick}>
+        <Card className={classes.card}>
+          <CardMedia
+            className={classes.cardMedia}
+            image={logo || 'https://source.unsplash.com/random'}
+            title="Image title"
+          />
+          <CardContent className={classes.cardContent}>
+            <Typography gutterBottom variant="h5" component="h2">
+              {card.node.frontmatter.title}
+            </Typography>
+            <Typography>
+              {card.node.frontmatter.shortdesc}
+            </Typography>
+          </CardContent>
+          <CardActions>
+            <Link to={card.node.fields.slug}>
+              <Button size="small" color="primary">
+                Zobacz
+              </Button>
+            </Link>
+            <Button size="small" color="primary">
+              Edytuj
+            </Button>
+          </CardActions>
+        </Card>
+      </Grid>
+    )
+}
+}
+
+export default AlbumCard;
