@@ -7,6 +7,12 @@ assignees: ''
 
 ---
 
+> Uzupełnij poniższe dane, komentarze możesz usunąć.
+
+---
+
+Dane:
+
 ```
 ---
 title: 'Nazwa Strony'
@@ -17,3 +23,7 @@ forumlink: 'https://forum.example.com'
 ---
 Dłuższy opis serwisu.
 ```
+
+Logo:
+
+> Przeciągnij tutaj logo, powinno zostać dodane automatycznie*
