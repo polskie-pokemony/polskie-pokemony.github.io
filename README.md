@@ -16,7 +16,7 @@ Znalazłeś błąd? Chcesz coś zmienić/poprawić/dodać? Świetnie! Poniżej z
 
 ### Wersja prostsza ✍️
 
-Utworz `issue` do tego repozytorium, korzystając z [szablonu](issues/new?assignees=&labels=nowa-strona&template=dodanie-nowej-strony.md). Jeśli chcesz, możesz spróbować też dodać dane samodzielnie korzystają z poniższych kroków.
+Utworz `issue` do tego repozytorium, korzystając z [szablonu](https://github.com/polskie-pokemony/polskie-pokemony.github.io/issues/new?assignees=&labels=nowa-strona&template=dodanie-nowej-strony.md). Jeśli chcesz, możesz spróbować też dodać dane samodzielnie korzystają z poniższych kroków.
 
 > ✅ Jeśli utworzyłeś issue, nie musisz robić nic więcej!
 
