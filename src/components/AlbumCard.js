@@ -33,7 +33,7 @@ class AlbumCard extends Component {
       return el.node.name === `logo-${entryName}`
     })
     const logo = findLogo.length !== 0 ? findLogo[0].node.publicURL : 'https://source.unsplash.com/random/'
-    const githubEditLink = `${config.githubRepo}/edit/master/src/pages/data/${entryName}.md`;
+    const githubEditLink = `${config.githubRepo}/edit/dev/src/pages/data/${entryName}.md`;
 
   
     return (
