@@ -67,7 +67,6 @@ export default function Album() {
           frontmatter {
             title
             category
-            logo
             shortdesc
           }
         }

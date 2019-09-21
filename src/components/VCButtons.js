@@ -4,6 +4,7 @@ import Button from '@material-ui/core/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDiscord } from '@fortawesome/free-brands-svg-icons';
 import EditIcon from '@material-ui/icons/Edit';
+import Forum from '@material-ui/icons/Forum';
 import config from '../config';
 
 const useStyles = makeStyles(theme => ({
@@ -16,7 +17,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const DiscordButton = ( data ) => {
-  if (data.categories.includes('Discord')) {
+  if (data.categories.includes('Discord') && data.pageInfo.frontmatter.discordinvite) {
     return (
       <Button variant="contained" color="primary" href={data.pageInfo.frontmatter.discordinvite} target={'_blank'} className={data.classes.button}>
         Dołącz
@@ -28,12 +29,24 @@ const DiscordButton = ( data ) => {
   }
 }
 
+const ForumButton = ( data ) => {
+  if (data.categories.includes('Forum') && data.pageInfo.frontmatter.forumlink) {
+    return (
+      <Button variant="contained" color="primary" href={data.pageInfo.frontmatter.forumlink} target={'_blank'} className={data.classes.button}>
+        Forum
+        <Forum />
+      </Button>
+    );
+  } else {
+    return (null);
+  }
+}
+
 const EditButton = ( data ) => {
-  console.log(data);
   return (
     <Button variant="outlined" color="secondary" href={data.ghLink} className={data.classes.button}>
       Edytuj
-      <EditIcon />
+      <EditIcon className={data.classes.rightIcon} />
     </Button>
   );
 }
@@ -47,6 +60,7 @@ const VCButtons = ({ pageInfo }) => {
   return (
   <React.Fragment>
     <DiscordButton categories={entryCategories} pageInfo={pageInfo} classes={classes} />
+    <ForumButton categories={entryCategories} pageInfo={pageInfo} classes={classes} />
     <EditButton ghLink={githubEditLink} classes={classes}/> 
   </React.Fragment>
   );

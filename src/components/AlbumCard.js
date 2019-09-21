@@ -7,6 +7,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardMedia from '@material-ui/core/CardMedia';
 import Grid from '@material-ui/core/Grid';
 import { Link } from 'gatsby';
+import config from '../config';
 
 class AlbumCard extends Component {
 
@@ -32,6 +33,8 @@ class AlbumCard extends Component {
       return el.node.name === `logo-${entryName}`
     })
     const logo = findLogo.length !== 0 ? findLogo[0].node.publicURL : 'https://source.unsplash.com/random/'
+    const githubEditLink = `${config.githubRepo}/edit/master/src/pages/data/${entryName}.md`;
+
   
     return (
       <Grid item key={card} xs={12} sm={6} md={4} className={`visibility-${card.node.frontmatter.category} ${this.state.showModal
@@ -41,7 +44,7 @@ class AlbumCard extends Component {
           <CardMedia
             className={classes.cardMedia}
             image={logo || 'https://source.unsplash.com/random'}
-            title="Image title"
+            alt={`Logo ${card.node.frontmatter.title}`}
           />
           <CardContent className={classes.cardContent}>
             <Typography gutterBottom variant="h5" component="h2">
@@ -57,9 +60,11 @@ class AlbumCard extends Component {
                 Zobacz
               </Button>
             </Link>
-            <Button size="small" color="primary">
-              Edytuj
-            </Button>
+            <a href={githubEditLink} target={'_blank'}>
+              <Button size="small" color="primary">
+                Edytuj
+              </Button>
+            </a>
           </CardActions>
         </Card>
       </Grid>

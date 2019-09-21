@@ -35,7 +35,6 @@ export default ({ data }) => {
     return el.node.name === `logo-${entryName}`
   })
   const logo = findLogo.length !== 0 ? findLogo[0].node.publicURL : 'https://source.unsplash.com/random/'
-  const githubRepo = `https://github.com/robdy/test/edit/master/src/pages/data/${entryName}.md`
   return (
     <Layout>
       <Container maxWidth='md' spacing='4' className={classes.root}>
@@ -49,7 +48,7 @@ export default ({ data }) => {
             </Box>
           </Grid>
           <Grid item md={3}>
-            <img src={logo} />
+            <img src={logo} alt={`Logo ${post.frontmatter.title}`} />
           </Grid>
         </Grid>
         </Paper>
@@ -64,9 +63,9 @@ export const query = graphql`
       html
       frontmatter {
         title
-        logo
         discordinvite
         category
+        forumlink
       }
       fields {
         slug

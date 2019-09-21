@@ -1,7 +1,8 @@
 ---
-title: "PokeSerwis.pl"
-category: "WWW,Forum"
-shortdesc: ''
+title: 'PokeSerwis.pl'
+category: 'WWW,Forum'
+shortdesc: 'Jeden z największych polskich serwisów o kieszonkowych stworkach'
 url: 'https://pokeserwis.pl'
+forumlink: 'http://forum.pokeserwis.pl/'
 ---
-aaaaaaaaaaaaaaaaaaaaaaaaaaaS
+Jeden z największych polskich serwisów. Zawiera informacje o grach (konsolowych jak i mobilnych), anime, a czasem także o historii poków w Polsce.
