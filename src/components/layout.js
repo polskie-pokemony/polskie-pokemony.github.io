@@ -43,11 +43,11 @@ function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'autor: '}
-      <UILink color="inherit" href="https://github.com/robdy">
+      <UILink color="inherit" href="https://github.com/robdy" target='_blank'>
         robdy
       </UILink>
       {' # szablon: '}
-      <UILink color="inherit" href="https://material-ui.com/">
+      <UILink color="inherit" href="https://material-ui.com/" target='_blank'>
         Material UI
       </UILink>
     </Typography>
@@ -66,11 +66,8 @@ const Layout = ({ children }) => {
 
       {/* Footer */}
       <footer className={classes.footer}>
-        <Typography variant="h6" align="center" gutterBottom>
-          Footer
-        </Typography>
         <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
-          Something here to give the footer a purpose!
+          Kod źródłowy strony możesz znaleźć <UILink color="inherit" href='https://github.com/polskie-pokemony/polskie-pokemony.github.io' target='_blank'>na Githubie</UILink>
         </Typography>
         <Copyright />
       </footer>
