@@ -50,7 +50,11 @@ const useStyles = makeStyles(theme => ({
   },
   'filter-bar': {
     padding: theme.spacing(2,4)
-  }
+  },
+  'filter-container': {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
 }));
 
 export default function Album() {
