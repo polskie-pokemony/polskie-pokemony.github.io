@@ -34,7 +34,6 @@ class AlbumCard extends Component {
     })
     const logo = findLogo.length !== 0 ? findLogo[0].node.publicURL : 'https://source.unsplash.com/random/'
     const githubEditLink = `${config.githubRepo}/edit/dev/src/pages/data/${entryName}.md`;
-
   
     return (
       <Grid item key={card} xs={12} sm={6} md={4} className={`visibility-${card.node.frontmatter.category} ${this.state.showModal

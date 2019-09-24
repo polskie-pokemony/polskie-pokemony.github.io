@@ -8,6 +8,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import VCButtons from './VCButtons';
+import Hidden from '@material-ui/core/Hidden';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -25,6 +26,10 @@ const useStyles = makeStyles(theme => ({
   text: {
     padding: theme.spacing(3,0,1,0),
   },
+  topLogo: {
+    'text-align': 'center',
+    'max-height': '10em',
+  }
 }));
 
 export default ({ data }) => {
@@ -40,6 +45,11 @@ export default ({ data }) => {
       <Container maxWidth='md' spacing='4' className={classes.root}>
         <Paper className={classes.root}>
         <Grid container spacing={3}>
+        <Hidden mdUp>
+            <Grid item xs={12} className={classes.topLogo}>
+              <img src={logo} alt={`Logo ${post.frontmatter.title}`} style={{ height: '100%' }} />
+            </Grid>
+          </Hidden>
           <Grid item md={9} className={classes.root}>
             <Box className={classes.content}>
             <Typography component="h2" variant='h4'>{post.frontmatter.title}</Typography>
@@ -47,9 +57,11 @@ export default ({ data }) => {
             <VCButtons pageInfo={post} />
             </Box>
           </Grid>
-          <Grid item md={3}>
-            <img src={logo} alt={`Logo ${post.frontmatter.title}`} />
-          </Grid>
+          <Hidden smDown>
+            <Grid item md={3}>
+              <img src={logo} alt={`Logo ${post.frontmatter.title}`} className={classes.leftLogo} />
+            </Grid>
+          </Hidden>
         </Grid>
         </Paper>
       </Container>
