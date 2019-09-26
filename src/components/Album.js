@@ -1,6 +1,5 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
 import { useStaticQuery, graphql } from 'gatsby';
 import Layout from "../components/layout";
 import AlbumSchema from './AlbumSchema';
@@ -65,6 +64,7 @@ export default function Album() {
     file: allMarkdownRemark {
       edges {
         node {
+          html
           fields {
             slug
           }

@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "polskie-pokemony.github.io",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Strona zbierająca informacje o polskich społecznościach Pokemon",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "robdy",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.22",
     "@fortawesome/free-brands-svg-icons": "^5.10.2",
@@ -31,7 +31,9 @@
     "prettier": "^1.18.2"
   },
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "pokemon",
+    "polska"
   ],
   "license": "MIT",
   "scripts": {
@@ -44,9 +46,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/polskie-pokemony/polskie-pokemony.github.io"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/polskie-pokemony/polskie-pokemony.github.io/issues"
   }
 }

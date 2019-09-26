@@ -13,14 +13,32 @@ class AlbumCard extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {showModal: false};
+    this.state = {show: true};
     this.handleClick = this.handleClick.bind(this);
+    this.shouldBeDisplayed = this.shouldBeDisplayed.bind(this);
   }
 
   handleClick() {
     this.setState(prevState => ({
       showModal: !prevState.showModal
     }));
+  }
+
+  shouldBeDisplayed() {
+    const node = this.props.card.node;
+    const categoryMatch = () => (node.frontmatter.category.split(',').includes(this.props.show) || this.props.show === 'all');
+    const query = this.props.search;
+    const searchMatch = (node, query) => {
+      if(node.html.toLowerCase().includes(query.toLowerCase())
+      || node.frontmatter.title.toLowerCase().includes(query.toLowerCase())
+      || node.frontmatter.shortdesc.toLowerCase().includes(query.toLowerCase())
+      || node.frontmatter.category.toLowerCase().includes(query.toLowerCase())) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+    return (searchMatch(node, query) && categoryMatch());
   }
   
   
@@ -34,12 +52,9 @@ class AlbumCard extends Component {
     })
     const logo = findLogo.length !== 0 ? findLogo[0].node.publicURL : 'https://source.unsplash.com/random/'
     const githubEditLink = `${config.githubRepo}/edit/dev/src/pages/data/${entryName}.md`;
-
   
     return (
-      <Grid item key={card} xs={12} sm={6} md={4} className={`visibility-${card.node.frontmatter.category} ${this.state.showModal
-        ? "modal--open"
-        : "modal--close"} ${card.node.frontmatter.category.split(',').includes(this.props.show) || this.props.show === 'all' ? classes['card-show']: classes['card-hide']}`} onClick={this.handleClick}>
+      <Grid item key={card} xs={12} sm={6} md={4} className={`${this.shouldBeDisplayed() ? classes['card-show']: classes['card-hide']}`} onClick={this.handleClick}>
         <Card className={classes.card}>
           <CardMedia
             className={classes.cardMedia}
