@@ -34,7 +34,7 @@ const WwwButton = ( data ) => {
 const DiscordButton = ( data ) => {
   if (data.categories.includes('Discord') && data.pageInfo.frontmatter.discordinvite) {
     return (
-      <Button variant="contained" color="primary" href={data.pageInfo.frontmatter.discordinvite} target={'_blank'} className={data.classes.button}>
+      <Button variant="contained" color="primary" href={data.pageInfo.frontmatter.discordinvite} target={'_blank'} rel={'nofollow'} className={data.classes.button}>
         Dołącz
         <FontAwesomeIcon icon={faDiscord} className={data.classes.rightIcon} />
       </Button>
@@ -59,7 +59,7 @@ const ForumButton = ( data ) => {
 
 const EditButton = ( data ) => {
   return (
-    <Button variant="outlined" color="secondary" href={data.ghLink} target={'_blank'} className={data.classes.button}>
+    <Button variant="outlined" color="secondary" href={data.ghLink} target={'_blank'} rel={'nofollow'} className={data.classes.button}>
       Edytuj
       <EditIcon className={data.classes.rightIcon} />
     </Button>
