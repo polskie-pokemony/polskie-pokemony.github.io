@@ -1,12 +1,18 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Polskie społeczności Pokémon`,
+    description: `Projekt powstał w celu zebrania informacji o miejscach w polskim internecie związanych z Pokémonami.`,
+    author: `@robdy`,
   },
   plugins: [
     `gatsby-plugin-material-ui`,
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-react-helmet-canonical-urls`,
+      options: {
+        siteUrl: `https://polskie-pokemony.github.io`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -19,6 +25,7 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images/`,
+        ignore: `${__dirname}/src/images/readme/*`
       },
     },
     `gatsby-transformer-remark`,
@@ -27,8 +34,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `polskie-pokemony.github.io`,
+        short_name: `pl-pokemony`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
