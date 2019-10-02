@@ -9,6 +9,8 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import VCButtons from './VCButtons';
 import Hidden from '@material-ui/core/Hidden';
+import SEO from "./seo";
+
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -41,6 +43,8 @@ export default ({ data }) => {
   })
   const logo = findLogo.length !== 0 ? findLogo[0].node.publicURL : 'https://source.unsplash.com/random/'
   return (
+    <>
+    <SEO title={post.frontmatter.title}/>
     <Layout>
       <Container maxWidth='md' spacing='4' className={classes.root}>
         <Paper className={classes.root}>
@@ -66,6 +70,7 @@ export default ({ data }) => {
         </Paper>
       </Container>
     </Layout>
+    </>
   )
 }
 

@@ -24,11 +24,11 @@ const TopBar = () => {
     return (
     <React.Fragment>
       <CssBaseline />
-      <AppBar position="relative">
+      <AppBar position='relative'>
         <Toolbar>
           <img src={PokeballIcon} className={classes.icon} alt='Ikona Pokeballa' /> 
           <Link to='/' className={classes.link}>
-          <Typography variant="h6" color="inherit" noWrap>
+          <Typography component='h1' variant='h6' color='inherit' noWrap>
             Polskie społeczności Pokémon
           </Typography>
           </Link>

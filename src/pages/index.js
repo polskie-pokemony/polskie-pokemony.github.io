@@ -4,7 +4,7 @@ import Album from "../components/Album"
 
 const IndexPage = ()  => (
   <>
-  <SEO />
+  <SEO title='Strona główna' />
   <Album />
   </>
 )

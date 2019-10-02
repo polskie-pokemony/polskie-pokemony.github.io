@@ -75,7 +75,7 @@ class AlbumCard extends Component {
                 Zobacz
               </Button>
             </Link>
-            <a href={githubEditLink} target={'_blank'}>
+            <a href={githubEditLink} target={'_blank'} rel='nofollow'>
               <Button size="small" color="primary">
                 Edytuj
               </Button>
