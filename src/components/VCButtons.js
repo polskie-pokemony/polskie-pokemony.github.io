@@ -66,6 +66,25 @@ const EditButton = ( data ) => {
   );
 }
 
+const SortedButtons = ( data ) => (
+  <>
+    {
+      data.categories.map(cat => {
+        switch (cat) {
+          case 'WWW':
+            return (<WwwButton categories={data.categories} pageInfo={data.pageInfo} classes={data.classes} />);
+          case 'Discord':
+           return (<DiscordButton categories={data.categories} pageInfo={data.pageInfo} classes={data.classes} />);
+          case 'Forum':
+            return (<ForumButton categories={data.categories} pageInfo={data.pageInfo} classes={data.classes} />);
+          default:
+            return null;
+        }
+      })
+      }
+  </>
+)
+
 const VCButtons = ({ pageInfo }) => {
   const classes = useStyles();
   const entryName = pageInfo.fields.slug.replace(/\//g,'')
@@ -74,9 +93,7 @@ const VCButtons = ({ pageInfo }) => {
 
   return (
   <React.Fragment>
-    <WwwButton categories={entryCategories} pageInfo={pageInfo} classes={classes} />
-    <DiscordButton categories={entryCategories} pageInfo={pageInfo} classes={classes} />
-    <ForumButton categories={entryCategories} pageInfo={pageInfo} classes={classes} />
+    <SortedButtons categories={entryCategories} pageInfo={pageInfo} classes={classes} />
     <EditButton ghLink={githubEditLink} classes={classes}/> 
   </React.Fragment>
   );
