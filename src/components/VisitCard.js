@@ -84,7 +84,6 @@ export const query = graphql`
         category
         fanpagelink
         fbgrouplink
-        messengerlink
         forumlink
         twitterlink
         ytlink
