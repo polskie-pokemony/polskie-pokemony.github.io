@@ -31,10 +31,16 @@ Utworz `issue` do tego repozytorium, korzystając z [szablonu](https://github.co
     ```
     ---
     title: 'Nazwa Strony'
-    category: 'WWW,Forum,Discord'
     shortdesc: 'Krótki opis serwisu'
-    discordinvite: 'https://discord.gg/example'
+    category: 'WWW,Forum,Discord,YouTube,Grupa,Twitter,Fanpage,Messenger'
+    wwwlink: 'https://example.com'
     forumlink: 'https://forum.example.com'
+    discordinvite: 'https://discord.gg/example'
+    ytlink: 'https://www.youtube.com/user/Example/'
+    fbgrouplink: 'https://www.facebook.com/groups/example/'
+    twitterlink: 'https://twitter.com/PolskaPokemon'
+    fanpagelink: 'https://www.facebook.com/example/'
+    messengerlink: 'https://www.messenger.com/t/1111111111111111111111'
     ---
     Dłuższy opis serwisu.
     ```
