@@ -82,7 +82,12 @@ export const query = graphql`
         title
         discordinvite
         category
+        fanpagelink
+        fbgrouplink
+        messengerlink
         forumlink
+        twitterlink
+        ytlink
         wwwlink
       }
       fields {
