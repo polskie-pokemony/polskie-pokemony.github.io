@@ -9,8 +9,9 @@ import React from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import logo from "../images/pokeball-color.svg";
 
-function SEO({ description, lang, meta, title }) {
+function SEO({ description, lang, meta, title, slug }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -19,6 +20,7 @@ function SEO({ description, lang, meta, title }) {
             title
             description
             author
+            url
           }
         }
       }
@@ -48,6 +50,14 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
         {
+          property: `og:image`,
+          content: logo,
+        },
+        {
+          property: `og:url`,
+          content: `${site.siteMetadata.url}/${slug}/`,
+        },
+        {
           property: `og:type`,
           content: `website`,
         },
@@ -73,7 +83,7 @@ function SEO({ description, lang, meta, title }) {
 }
 
 SEO.defaultProps = {
-  lang: `en`,
+  lang: `pl`,
   meta: [],
   description: ``,
 }
