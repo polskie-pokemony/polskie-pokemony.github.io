@@ -55,7 +55,7 @@ function SEO({ description, lang, meta, title, slug }) {
         },
         {
           property: `og:url`,
-          content: `${site.siteMetadata.url}/${slug}/`,
+          content: `${site.siteMetadata.url}/${slug ? `${slug}/` : ''}`,
         },
         {
           property: `og:type`,
