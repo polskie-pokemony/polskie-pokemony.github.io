@@ -3,6 +3,7 @@ module.exports = {
     title: `Polskie społeczności Pokémon`,
     description: `Projekt powstał w celu zebrania informacji o miejscach w polskim internecie związanych z Pokémonami.`,
     author: `@robdy`,
+    url: `https://polskie-pokemony.github.io`,
   },
   plugins: [
     {

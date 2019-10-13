@@ -44,7 +44,7 @@ export default ({ data }) => {
   const logo = findLogo.length !== 0 ? findLogo[0].node.publicURL : 'https://source.unsplash.com/random/'
   return (
     <>
-    <SEO title={post.frontmatter.title}/>
+    <SEO title={post.frontmatter.title} slug={entryName} />
     <Layout>
       <Container maxWidth='md' spacing='4' className={classes.root}>
         <Paper className={classes.root}>
